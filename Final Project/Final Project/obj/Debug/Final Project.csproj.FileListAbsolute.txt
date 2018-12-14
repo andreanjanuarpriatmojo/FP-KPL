@@ -1,0 +1,12 @@
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final Project.csprojAssemblyReference.cache
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final_Project.MainWindow.resources
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final_Project.Properties.Resources.resources
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final Project.csproj.GenerateResource.cache
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final Project.csproj.CoreCompileInputs.cache
+D:\kuliah\KPL\Final Project\Final Project\Final Project\bin\Debug\Final Project.exe.config
+D:\kuliah\KPL\Final Project\Final Project\Final Project\bin\Debug\Final Project.exe
+D:\kuliah\KPL\Final Project\Final Project\Final Project\bin\Debug\Final Project.pdb
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final Project.exe
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final Project.pdb
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final_Project.IconSet.resources
+D:\kuliah\KPL\Final Project\Final Project\Final Project\obj\Debug\Final_Project.TextForm.resources
