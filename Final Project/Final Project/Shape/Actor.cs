@@ -130,5 +130,13 @@ namespace Final_Project.Shape
         {
             return false;
         }
+
+        public override Point GetCenterPoint2()
+        {
+            Point point = new Point();
+            point.X = startPoint.X;
+            point.Y = (startPoint.Y + finishPoint.Y) / 2;
+            return point;
+        }
     }
 }

@@ -120,5 +120,10 @@ namespace Final_Project
         {
             throw new NotImplementedException();
         }
+
+        public override Point GetCenterPoint2()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

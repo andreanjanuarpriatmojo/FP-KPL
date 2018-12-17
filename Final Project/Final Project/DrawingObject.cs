@@ -22,6 +22,7 @@ namespace Final_Project
         public abstract void DrawStatic();
         public abstract void DrawEdit();
         public abstract Point GetCenterPoint();
+        public abstract Point GetCenterPoint2();
         public abstract string GetText();
         public abstract void SetText(string text);
         public abstract bool Add(DrawingObject drawingObject);

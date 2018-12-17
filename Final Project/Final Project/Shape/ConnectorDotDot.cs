@@ -165,8 +165,16 @@ namespace Final_Project.Shape
 
         public void Update()
         {
-            this.startPoint = objectSource.GetCenterPoint();
-            this.finishPoint = objectDestination.GetCenterPoint();
+            if (this.startPoint.X < this.finishPoint.X)
+            {
+                this.startPoint = objectSource.GetCenterPoint();
+                this.finishPoint = objectDestination.GetCenterPoint();
+            }
+            else
+            {
+                this.startPoint = objectSource.GetCenterPoint2();
+                this.finishPoint = objectDestination.GetCenterPoint2();
+            }
         }
 
         public override string GetText()
@@ -185,6 +193,11 @@ namespace Final_Project.Shape
         }
 
         public override bool Remove(DrawingObject drawingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Point GetCenterPoint2()
         {
             throw new NotImplementedException();
         }

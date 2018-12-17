@@ -110,6 +110,14 @@ namespace Final_Project.Shape
             return point;
         }
 
+        public override Point GetCenterPoint2()
+        {
+            Point point = new Point();
+            point.X = cirX + cirWidth;
+            point.Y = cirY + (cirHeight / 2);
+            return point;
+        }
+
         public override string GetText()
         {
             return this.Value;

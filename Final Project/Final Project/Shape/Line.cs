@@ -100,5 +100,10 @@ namespace Final_Project.Shape
         {
             throw new NotImplementedException();
         }
+
+        public override Point GetCenterPoint2()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

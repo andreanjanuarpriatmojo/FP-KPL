@@ -84,5 +84,10 @@ namespace Final_Project.Shape
         {
             return false;
         }
+
+        public override Point GetCenterPoint2()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
