@@ -12,6 +12,7 @@ namespace Final_Project.Tool
     {
         private ICanvas canvas;
         private Text text;
+        private string textValue;
 
         public Cursor Cursor
         {
@@ -47,15 +48,25 @@ namespace Final_Project.Tool
             if (e.Button == MouseButtons.Left)
             {
                 text = new Text();
-                text.Value = "Test Text Tool";
                 text.textX = e.X;
                 text.textY = e.Y;
-
-                DrawingObject drawingObject = canvas.SelectObject(e.X, e.Y);
+                
+                DrawingObject drawingObject = canvas.GetObject(e.X, e.Y);
 
                 if (drawingObject == null)
                 {
                     canvas.AddDrawingObject(text);
+                }
+                else
+                {
+                    textValue = drawingObject.GetText();
+                    using (TextForm textForm = new TextForm(textValue, drawingObject, canvas))
+                    {
+                        if (textForm.ShowDialog() == DialogResult.OK)
+                        {
+                            textForm.ShowDialog();
+                        }
+                    }
                 }
             }
         }

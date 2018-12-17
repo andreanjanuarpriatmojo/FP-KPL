@@ -90,5 +90,15 @@ namespace Final_Project.Shape
         {
             throw new NotImplementedException();
         }
+
+        public override bool Add(DrawingObject drawingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Remove(DrawingObject drawingObject)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

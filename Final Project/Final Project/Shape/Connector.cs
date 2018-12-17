@@ -27,25 +27,48 @@ namespace Final_Project.Shape
             Update();
         }
 
+        public void arrow()
+        {
+            double angle = Math.Atan2(finishPoint.Y - startPoint.Y, finishPoint.X - startPoint.X);
+            PointF point1 = new PointF(finishPoint.X + (float)(Math.Cos(angle - Math.PI / 2.0) * 10), finishPoint.Y + (float)(Math.Sin(angle - Math.PI / 2.0) * 10));
+            PointF point2 = new PointF(finishPoint.X + (float)(Math.Cos(angle) * 10), finishPoint.Y + (float)(Math.Sin(angle) * 10));
+            PointF point3 = new PointF(finishPoint.X - (float)(Math.Cos(angle - Math.PI / 2.0) * 10), finishPoint.Y - (float)(Math.Sin(angle - Math.PI / 2.0) * 10));
+
+            this.graphics.DrawLine(pen, point2, point1);
+            this.graphics.DrawLine(pen, point2, point3);
+        }
+
         public override void DrawEdit()
         {
             pen.Color = Color.Blue;
+            //pen.EndCap = LineCap.Triangle;
+            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
+            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.Solid;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            arrow();
         }
 
         public override void DrawStatic()
         {
             pen.Color = Color.Black;
+            //pen.EndCap = LineCap.Triangle;
+            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
+            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.Solid;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            arrow();
         }
 
         public override void DrawPreview()
         {
             pen.Color = Color.Blue;
+            //pen.EndCap = LineCap.Triangle;
+            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
+            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.DashDotDot;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            arrow();
         }
 
         public override bool HitArea(int x, int y)
@@ -85,6 +108,16 @@ namespace Final_Project.Shape
         }
 
         public override void SetText(string text)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Add(DrawingObject drawingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Remove(DrawingObject drawingObject)
         {
             throw new NotImplementedException();
         }

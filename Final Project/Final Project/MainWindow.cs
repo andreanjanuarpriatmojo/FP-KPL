@@ -33,7 +33,7 @@ namespace Final_Project
             #region Tool
             //this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new SelectTool());
-            //this.toolbox.AddTool(new TextTool());
+            this.toolbox.AddTool(new TextTool());
             this.toolbox.AddTool(new ActorTool());
             this.toolbox.AddTool(new UseCaseTool());
             this.toolbox.AddTool(new ConnectorTool());

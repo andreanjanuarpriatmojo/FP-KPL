@@ -16,7 +16,7 @@ namespace Final_Project.Shape
         public int cirY { get; set; }
         public int cirWidth { get; set; }
         public int cirHeight { get; set; }
-        public string value { get; set; }
+        public string Value { get; set; }
 
         private Pen pen;
         private Brush brush;
@@ -26,6 +26,7 @@ namespace Final_Project.Shape
 
         public UseCase()
         {
+            this.Value = "Use Case";
             this.pen = new Pen(Color.Black);
             this.brush = new SolidBrush(Color.Black);
             FontFamily fontFamily = new FontFamily("Arial");
@@ -64,8 +65,17 @@ namespace Final_Project.Shape
         {
             this.graphics.DrawEllipse(this.pen, cirX, cirY, cirWidth, cirHeight);
 
-            this.graphics.DrawString(value, font, brush, (int)(cirX + (cirWidth * 0.42)) , (int)(cirY + (cirHeight * 0.42)));
-            size = this.graphics.MeasureString(value, font);
+            //this.graphics.DrawString(Value, font, brush, (int)(cirX + (cirWidth * 0.42)) , (int)(cirY + (cirHeight * 0.42)));
+            //size = this.graphics.MeasureString(Value, font);
+        }
+
+        private void DrawText()
+        {
+            size = this.graphics.MeasureString(Value, font);
+            float x = (cirWidth / 2) - (size.Width / 2) + this.cirX;
+            float y = (cirHeight / 2) - (size.Height / 2) + this.cirY;
+            PointF point = new PointF(x, y);
+            this.graphics.DrawString(Value, font, brush, point);
         }
 
         public override void DrawPreview()
@@ -73,6 +83,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.DashDotDot;
             DrawLogic();
+            DrawText();
         }
 
         public override void DrawStatic()
@@ -80,6 +91,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Black;
             pen.DashStyle = DashStyle.Solid;
             DrawLogic();
+            DrawText();
         }
 
         public override void DrawEdit()
@@ -87,24 +99,35 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Solid;
             DrawLogic();
+            DrawText();
         }
 
         public override Point GetCenterPoint()
         {
             Point point = new Point();
-            point.X = cirX + (cirWidth / 2);
+            point.X = cirX;
             point.Y = cirY + (cirHeight / 2);
             return point;
         }
 
         public override string GetText()
         {
-            throw new NotImplementedException();
+            return this.Value;
         }
 
         public override void SetText(string text)
         {
-            throw new NotImplementedException();
+            this.Value = text;
+        }
+
+        public override bool Add(DrawingObject drawingObject)
+        {
+            return false;
+        }
+
+        public override bool Remove(DrawingObject drawingObject)
+        {
+            return false;
         }
     }
 }

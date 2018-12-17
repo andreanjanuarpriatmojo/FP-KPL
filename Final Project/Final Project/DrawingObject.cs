@@ -24,6 +24,8 @@ namespace Final_Project
         public abstract Point GetCenterPoint();
         public abstract string GetText();
         public abstract void SetText(string text);
+        public abstract bool Add(DrawingObject drawingObject);
+        public abstract bool Remove(DrawingObject drawingObject);
         protected DrawingState state;
         
         public DrawingState drawingState

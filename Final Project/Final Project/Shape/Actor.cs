@@ -15,7 +15,7 @@ namespace Final_Project.Shape
         private Pen pen;
         public Point startPoint { get; set; }
         public Point finishPoint { get; set; }
-        public string value { get; set; }
+        public string Value { get; set; }
 
         private Brush brush;
         private Font font;
@@ -23,6 +23,7 @@ namespace Final_Project.Shape
 
         public Actor()
         {
+            this.Value = "Actor";
             this.pen = new Pen(Color.Black);
             this.brush = new SolidBrush(Color.Black);
             FontFamily fontFamily = new FontFamily("Arial");
@@ -43,7 +44,6 @@ namespace Final_Project.Shape
         {
             Point joint = new Point((finishPoint.X + startPoint.X) / 2, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.7));
             Point joint2 = new Point((finishPoint.X + startPoint.X) / 2, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.3));
-            Point textJoint = new Point((int)((finishPoint.X + startPoint.X) * 0.45) , (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 1.1));
 
             this.graphics.DrawEllipse(pen, startPoint.X + (finishPoint.X - startPoint.X) / 4 , startPoint.Y, (finishPoint.X - startPoint.X) / 2, (int)((finishPoint.Y - startPoint.Y) * 0.25));
             this.graphics.DrawLine(pen, joint, this.finishPoint);
@@ -51,9 +51,16 @@ namespace Final_Project.Shape
             this.graphics.DrawLine(pen, new Point((finishPoint.X + startPoint.X) / 2, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.25)), joint);
             this.graphics.DrawLine(pen, joint2, new Point(finishPoint.X, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.6)));
             this.graphics.DrawLine(pen, new Point(startPoint.X, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.6)), joint2);
+            
+        }
 
-            this.graphics.DrawString(value, font, brush, textJoint.X, textJoint.Y);
-            size = this.graphics.MeasureString(value, font);
+        private void DrawText()
+        {
+            size = this.graphics.MeasureString(Value, font);
+            float x = (finishPoint.X + startPoint.X) / 2 - (size.Width / 2);
+            float y = finishPoint.Y + 10;
+            PointF point = new PointF(x, y);
+            this.graphics.DrawString(Value, font, brush, point);
         }
 
         public override void DrawEdit()
@@ -61,6 +68,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Solid;
             DrawLogic();
+            DrawText();
         }
 
         public override void DrawPreview()
@@ -68,6 +76,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.DashDotDot;
             DrawLogic();
+            DrawText();
         }
 
         public override void DrawStatic()
@@ -75,12 +84,13 @@ namespace Final_Project.Shape
             pen.Color = Color.Black;
             pen.DashStyle = DashStyle.Solid;
             DrawLogic();
+            DrawText();
         }
 
         public override Point GetCenterPoint()
         {
             Point point = new Point();
-            point.X = (startPoint.X + finishPoint.X) / 2;
+            point.X = finishPoint.X;
             point.Y = (startPoint.Y + finishPoint.Y) / 2;
             return point;
         }
@@ -103,12 +113,22 @@ namespace Final_Project.Shape
 
         public override string GetText()
         {
-            throw new NotImplementedException();
+            return this.Value;
         }
 
         public override void SetText(string text)
         {
-            throw new NotImplementedException();
+            this.Value = text;
+        }
+
+        public override bool Add(DrawingObject drawingObject)
+        {
+            return false;
+        }
+
+        public override bool Remove(DrawingObject drawingObject)
+        {
+            return false;
         }
     }
 }

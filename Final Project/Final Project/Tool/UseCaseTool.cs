@@ -12,6 +12,7 @@ namespace Final_Project.Tool
     {
         private ICanvas canvas;
         private UseCase useCase;
+        private string textValue;
 
         public Cursor Cursor
         {
@@ -48,8 +49,23 @@ namespace Final_Project.Tool
             if (e.Button == MouseButtons.Left)
             {
                 this.useCase = new UseCase(e.X, e.Y);
-                //useCase.value = "Text";
-                this.canvas.AddDrawingObject(this.useCase);
+                DrawingObject drawingObject = canvas.GetObject(e.X, e.Y);
+
+                if (drawingObject == null)
+                {
+                    canvas.AddDrawingObject(useCase);
+                }
+                else
+                {
+                    textValue = drawingObject.GetText();
+                    using (TextForm textForm = new TextForm(textValue, drawingObject, canvas))
+                    {
+                        if (textForm.ShowDialog() == DialogResult.OK)
+                        {
+                            textForm.ShowDialog();
+                        }
+                    }
+                }
             }
         }
 
@@ -72,7 +88,6 @@ namespace Final_Project.Tool
         {
             if (e.Button == MouseButtons.Left)
             {
-                useCase.value = "Text";
                 this.useCase.Selected();
             }
         }

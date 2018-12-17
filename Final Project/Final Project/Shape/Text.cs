@@ -20,8 +20,8 @@ namespace Final_Project.Shape
 
         public Text()
         {
+            this.Value = "sembarang";
             this.brush = new SolidBrush(Color.Black);
-
             FontFamily fontFamily = new FontFamily("Arial");
             font = new Font(fontFamily, 16, FontStyle.Regular, GraphicsUnit.Pixel);
         }
@@ -67,12 +67,22 @@ namespace Final_Project.Shape
 
         public override string GetText()
         {
-            throw new NotImplementedException();
+            return this.Value;
         }
 
         public override void SetText(string text)
         {
-            throw new NotImplementedException();
+            this.Value = text;
+        }
+
+        public override bool Add(DrawingObject drawingObject)
+        {
+            return false;
+        }
+
+        public override bool Remove(DrawingObject drawingObject)
+        {
+            return false;
         }
     }
 }

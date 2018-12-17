@@ -13,6 +13,7 @@ namespace Final_Project.Tool
     {
         private ICanvas canvas;
         private Actor actor;
+        private string textValue;
 
         public Cursor Cursor
         {
@@ -49,7 +50,24 @@ namespace Final_Project.Tool
             {
                 actor = new Actor(new Point(e.X, e.Y));
                 actor.finishPoint = new Point(e.X, e.Y);
-                canvas.AddDrawingObject(actor);
+
+                DrawingObject drawingObject = canvas.GetObject(e.X, e.Y);
+
+                if (drawingObject == null)
+                {
+                    canvas.AddDrawingObject(actor);
+                }
+                else
+                {
+                    textValue = drawingObject.GetText();
+                    using (TextForm textForm = new TextForm(textValue, drawingObject, canvas))
+                    {
+                        if (textForm.ShowDialog() == DialogResult.OK)
+                        {
+                            textForm.ShowDialog();
+                        }
+                    }
+                }
             }
         }
 
@@ -66,7 +84,6 @@ namespace Final_Project.Tool
             if (e.Button == MouseButtons.Left)
             {
                 actor.finishPoint = new Point(e.X, e.Y);
-                actor.value = "Text";
                 actor.Selected();
             }
         }

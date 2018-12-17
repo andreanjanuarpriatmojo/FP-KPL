@@ -23,7 +23,7 @@ namespace Final_Project
             this.canvas = canvas;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             List<DrawingObject> drawingObjects = canvas.GetAllObject();
             foreach(DrawingObject drawingObject in drawingObjects)
