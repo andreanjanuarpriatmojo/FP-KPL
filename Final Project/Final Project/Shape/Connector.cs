@@ -29,45 +29,106 @@ namespace Final_Project.Shape
 
         public void arrow()
         {
-            double angle = Math.Atan2(finishPoint.Y - startPoint.Y, finishPoint.X - startPoint.X);
-            PointF point1 = new PointF(finishPoint.X + (float)(Math.Cos(angle - Math.PI / 2.0) * 10), finishPoint.Y + (float)(Math.Sin(angle - Math.PI / 2.0) * 10));
-            PointF point2 = new PointF(finishPoint.X + (float)(Math.Cos(angle) * 10), finishPoint.Y + (float)(Math.Sin(angle) * 10));
-            PointF point3 = new PointF(finishPoint.X - (float)(Math.Cos(angle - Math.PI / 2.0) * 10), finishPoint.Y - (float)(Math.Sin(angle - Math.PI / 2.0) * 10));
+            PointF point = this.finishPoint;
 
-            this.graphics.DrawLine(pen, point2, point1);
-            this.graphics.DrawLine(pen, point2, point3);
+            double length = Math.Sqrt(Math.Pow(Math.Abs(startPoint.X - finishPoint.X), 2) + Math.Pow(Math.Abs(startPoint.Y - finishPoint.Y), 2));
+
+            double angle = Math.Atan2(Math.Abs(startPoint.Y - finishPoint.Y), Math.Abs(startPoint.X - finishPoint.X));
+
+            double pointX, pointY;
+            if(startPoint.X > finishPoint.X)
+            {
+                pointX = startPoint.X - (Math.Cos(angle) * (length - (3 * 5)));
+            }
+            else
+            {
+                pointX = Math.Cos(angle) * (length - (3 * 5)) + startPoint.X;
+            }
+            if(startPoint.Y > finishPoint.Y)
+            {
+                pointY = startPoint.Y - (Math.Sin(angle) * (length - (3 * 5)));
+            }
+            else
+            {
+                pointY = (Math.Sin(angle) * (length - (3 * 5))) + startPoint.Y;
+            }
+
+            double angleA = Math.Atan2((3 * 5), (length - (3 * 5)));
+            double angleB = Math.PI * (90 - (angle * (180 / Math.PI)) - (angleA * (180 / Math.PI))) / 180;
+
+            double length2 = (3 * 5) / Math.Sin(angleA);
+
+            if (startPoint.X > finishPoint.X)
+            {
+                pointX = startPoint.X - (Math.Sin(angleB) * length2);
+            }
+            else
+            {
+                pointX = (Math.Sin(angleB) * length2) + startPoint.X;
+            }
+
+            if (startPoint.Y > finishPoint.Y)
+            {
+                pointY = startPoint.Y - (Math.Cos(angleB) * length2);
+            }
+            else
+            {
+                pointY = (Math.Cos(angleB) * length2) + startPoint.Y;
+            }
+
+            PointF pointLeft = new PointF((float)pointX, (float)pointY);
+
+            angleB = angle - angleA;
+
+            if (startPoint.X > finishPoint.X)
+            {
+                pointX = startPoint.X - (Math.Cos(angleB) * length2);
+            }
+            else
+            {
+                pointX = (Math.Cos(angleB) * length2) + startPoint.X;
+            }
+
+            if (startPoint.Y > finishPoint.Y)
+            {
+                pointY = startPoint.Y - (Math.Sin(angleB) * length2);
+            }
+            else
+            {
+                pointY = (Math.Sin(angleB) * length2) + startPoint.Y;
+            }
+
+            PointF pointRight = new PointF((float)pointX, (float)pointY);
+
+            PointF[] arrowPoints = new PointF[3];
+            arrowPoints[0] = point;
+            arrowPoints[1] = pointLeft;
+            arrowPoints[2] = pointRight;
+
+            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            this.graphics.DrawLine(pen, pointLeft, point);
+            this.graphics.DrawLine(pen, pointRight, point);
+
         }
 
         public override void DrawEdit()
         {
             pen.Color = Color.Blue;
-            //pen.EndCap = LineCap.Triangle;
-            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
-            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.Solid;
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
         }
 
         public override void DrawStatic()
         {
             pen.Color = Color.Black;
-            //pen.EndCap = LineCap.Triangle;
-            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
-            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.Solid;
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
         }
 
         public override void DrawPreview()
         {
             pen.Color = Color.Blue;
-            //pen.EndCap = LineCap.Triangle;
-            //AdjustableArrowCap arrow = new AdjustableArrowCap(5, 5);
-            //pen.CustomEndCap = arrow;
             pen.DashStyle = DashStyle.DashDotDot;
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
         }
 

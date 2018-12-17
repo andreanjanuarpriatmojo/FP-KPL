@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Final_Project.Shape
 {
-    class ConnectorDotDot : DrawingObject, IObserver
+    class Generalization : DrawingObject, IObserver
     {
         private const double EPSILON = 3.0;
         public Point startPoint;
@@ -19,7 +19,7 @@ namespace Final_Project.Shape
         public DrawingObject objectSource;
         public DrawingObject objectDestination;
 
-        public ConnectorDotDot(DrawingObject objectSource, DrawingObject objectDestination)
+        public Generalization(DrawingObject objectSource, DrawingObject objectDestination)
         {
             this.pen = new Pen(Color.Black);
             this.objectSource = objectSource;
@@ -52,6 +52,8 @@ namespace Final_Project.Shape
             {
                 pointY = (Math.Sin(angle) * (length - (3 * 5))) + startPoint.Y;
             }
+
+            PointF pointBack = new PointF((float)pointX, (float)pointY);
 
             double angleA = Math.Atan2((3 * 5), (length - (3 * 5)));
             double angleB = Math.PI * (90 - (angle * (180 / Math.PI)) - (angleA * (180 / Math.PI))) / 180;
@@ -100,41 +102,35 @@ namespace Final_Project.Shape
 
             PointF pointRight = new PointF((float)pointX, (float)pointY);
 
-            PointF[] arrowPoints = new PointF[3];
+            PointF[] arrowPoints = new PointF[4];
             arrowPoints[0] = point;
             arrowPoints[1] = pointLeft;
-            arrowPoints[2] = pointRight;
+            arrowPoints[2] = pointBack;
+            arrowPoints[3] = pointRight;
 
-            pen.DashStyle = DashStyle.Solid;
-            this.graphics.DrawLine(pen, pointLeft, point);
-            this.graphics.DrawLine(pen, pointRight, point);
+            this.graphics.DrawLine(pen, this.startPoint, pointBack);
+            this.graphics.DrawPolygon(pen, arrowPoints);
 
         }
 
         public override void DrawEdit()
         {
             pen.Color = Color.Blue;
-            pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            pen.DashStyle = DashStyle.Solid;
             arrow();
         }
 
         public override void DrawStatic()
         {
             pen.Color = Color.Black;
-            pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            pen.DashStyle = DashStyle.Solid;
             arrow();
         }
 
         public override void DrawPreview()
         {
             pen.Color = Color.Blue;
-            pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
-            this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
+            pen.DashStyle = DashStyle.DashDotDot;
             arrow();
         }
 

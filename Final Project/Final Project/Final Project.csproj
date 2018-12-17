@@ -74,7 +74,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape\Actor.cs" />
+    <Compile Include="Shape\Association.cs" />
     <Compile Include="Shape\ConnectorDotDot.cs" />
+    <Compile Include="Shape\Extend.cs" />
+    <Compile Include="Shape\Generalization.cs" />
+    <Compile Include="Shape\Include.cs" />
     <Compile Include="Shape\UseCase.cs" />
     <Compile Include="Shape\Connector.cs" />
     <Compile Include="Shape\Line.cs" />
@@ -91,10 +95,22 @@
     <Compile Include="Tool\ActorTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Tool\AssociationTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Tool\ConnectorDotDotTool.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tool\ConnectorTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tool\ExtendTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tool\GeneralizationTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tool\IncludeTool.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tool\LineTool.cs">

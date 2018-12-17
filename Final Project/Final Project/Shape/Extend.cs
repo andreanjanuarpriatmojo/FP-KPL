@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Final_Project.Shape
 {
-    class ConnectorDotDot : DrawingObject, IObserver
+    class Extend : DrawingObject, IObserver
     {
         private const double EPSILON = 3.0;
         public Point startPoint;
@@ -19,9 +19,19 @@ namespace Final_Project.Shape
         public DrawingObject objectSource;
         public DrawingObject objectDestination;
 
-        public ConnectorDotDot(DrawingObject objectSource, DrawingObject objectDestination)
+        public string Value { get; set; }
+
+        private Brush brush;
+        private Font font;
+        private SizeF size;
+
+        public Extend(DrawingObject objectSource, DrawingObject objectDestination)
         {
+            this.Value = "<<extend>>";
             this.pen = new Pen(Color.Black);
+            this.brush = new SolidBrush(Color.Black);
+            FontFamily fontFamily = new FontFamily("Arial");
+            font = new Font(fontFamily, 12, FontStyle.Regular, GraphicsUnit.Pixel);
             this.objectSource = objectSource;
             this.objectDestination = objectDestination;
             Update();
@@ -111,6 +121,15 @@ namespace Final_Project.Shape
 
         }
 
+        private void Text()
+        {
+            size = this.graphics.MeasureString(Value, font);
+            float x = (finishPoint.X + startPoint.X) / 2 - (size.Width / 2);
+            float y = (finishPoint.Y + startPoint.Y) / 2 - (size.Width / 2);
+            PointF point = new PointF(x, y);
+            this.graphics.DrawString(Value, font, brush, point);
+        }
+
         public override void DrawEdit()
         {
             pen.Color = Color.Blue;
@@ -118,6 +137,7 @@ namespace Final_Project.Shape
             pen.DashPattern = new float[] { 1, 3 };
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
+            Text();
         }
 
         public override void DrawStatic()
@@ -127,6 +147,7 @@ namespace Final_Project.Shape
             pen.DashPattern = new float[] { 1, 3 };
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
+            Text();
         }
 
         public override void DrawPreview()
@@ -136,6 +157,7 @@ namespace Final_Project.Shape
             pen.DashPattern = new float[] { 1, 3 };
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
+            Text();
         }
 
         public override bool HitArea(int x, int y)
@@ -190,3 +212,4 @@ namespace Final_Project.Shape
         }
     }
 }
+

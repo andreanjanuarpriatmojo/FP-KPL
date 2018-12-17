@@ -36,8 +36,12 @@ namespace Final_Project
             this.toolbox.AddTool(new TextTool());
             this.toolbox.AddTool(new ActorTool());
             this.toolbox.AddTool(new UseCaseTool());
+            this.toolbox.AddTool(new AssociationTool());
             this.toolbox.AddTool(new ConnectorTool());
             this.toolbox.AddTool(new ConnectorDotDotTool());
+            this.toolbox.AddTool(new GeneralizationTool());
+            this.toolbox.AddTool(new IncludeTool());
+            this.toolbox.AddTool(new ExtendTool());
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
             #endregion
         }
