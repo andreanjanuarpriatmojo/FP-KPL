@@ -160,7 +160,7 @@ namespace Final_Project.Shape
 
         public void Update()
         {
-            if(this.startPoint.X < this.finishPoint.X )
+            if (this.startPoint.X < this.finishPoint.X)
             {
                 this.startPoint = objectSource.GetCenterPoint();
                 this.finishPoint = objectDestination.GetCenterPoint();
@@ -170,6 +170,7 @@ namespace Final_Project.Shape
                 this.startPoint = objectSource.GetCenterPoint2();
                 this.finishPoint = objectDestination.GetCenterPoint2();
             }
+
         }
 
         public override string GetText()

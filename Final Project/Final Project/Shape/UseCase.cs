@@ -103,6 +103,7 @@ namespace Final_Project.Shape
 
         public override Point GetCenterPoint()
         {
+            //left
             Point point = new Point();
             point.X = cirX;
             point.Y = cirY + (cirHeight / 2);
@@ -111,6 +112,7 @@ namespace Final_Project.Shape
 
         public override Point GetCenterPoint2()
         {
+            //right
             Point point = new Point();
             point.X = cirX + cirWidth;
             point.Y = cirY + (cirHeight / 2);

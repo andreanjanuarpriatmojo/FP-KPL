@@ -192,15 +192,31 @@ namespace Final_Project.Shape
 
         public void Update()
         {
-            if (this.startPoint.X < this.finishPoint.X)
+            if (objectSource is UseCase && objectDestination is UseCase)
             {
-                this.startPoint = objectSource.GetCenterPoint();
-                this.finishPoint = objectDestination.GetCenterPoint();
+                if (this.startPoint.X < this.finishPoint.X)
+                {
+                    this.startPoint = objectSource.GetCenterPoint2();
+                    this.finishPoint = objectDestination.GetCenterPoint();
+                }
+                else
+                {
+                    this.startPoint = objectSource.GetCenterPoint();
+                    this.finishPoint = objectDestination.GetCenterPoint2();
+                }
             }
             else
             {
-                this.startPoint = objectSource.GetCenterPoint2();
-                this.finishPoint = objectDestination.GetCenterPoint2();
+                if (this.startPoint.X < this.finishPoint.X)
+                {
+                    this.startPoint = objectSource.GetCenterPoint();
+                    this.finishPoint = objectDestination.GetCenterPoint();
+                }
+                else
+                {
+                    this.startPoint = objectSource.GetCenterPoint2();
+                    this.finishPoint = objectDestination.GetCenterPoint2();
+                }
             }
         }
 
