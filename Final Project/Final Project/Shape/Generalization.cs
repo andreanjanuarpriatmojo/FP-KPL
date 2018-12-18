@@ -108,6 +108,7 @@ namespace Final_Project.Shape
             arrowPoints[2] = pointBack;
             arrowPoints[3] = pointRight;
 
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, pointBack);
             this.graphics.DrawPolygon(pen, arrowPoints);
 

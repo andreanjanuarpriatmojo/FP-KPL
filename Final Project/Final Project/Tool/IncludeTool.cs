@@ -42,9 +42,9 @@ namespace Final_Project.Tool
 
         public IncludeTool()
         {
-            this.Name = "Association Tool";
-            this.ToolTipText = "Connector Tool";
-            this.Image = IconSet.connector;
+            this.Name = "Include Tool";
+            this.ToolTipText = "Include Tool";
+            this.Image = IconSet.include;
             this.CheckOnClick = true;
         }
 

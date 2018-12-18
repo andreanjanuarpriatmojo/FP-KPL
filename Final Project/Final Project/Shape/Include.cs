@@ -115,6 +115,7 @@ namespace Final_Project.Shape
             arrowPoints[1] = pointLeft;
             arrowPoints[2] = pointRight;
 
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pen.DashStyle = DashStyle.Solid;
             this.graphics.DrawLine(pen, pointLeft, point);
             this.graphics.DrawLine(pen, pointRight, point);
@@ -127,6 +128,7 @@ namespace Final_Project.Shape
             float x = (finishPoint.X + startPoint.X) / 2 - (size.Width / 2);
             float y = (finishPoint.Y + startPoint.Y) / 2 - (size.Width / 2);
             PointF point = new PointF(x, y);
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawString(Value, font, brush, point);
         }
 
@@ -135,6 +137,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Custom;
             pen.DashPattern = new float[] { 1, 3 };
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
             Text();
@@ -145,6 +148,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Black;
             pen.DashStyle = DashStyle.Custom;
             pen.DashPattern = new float[] { 1, 3 };
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
             Text();
@@ -155,6 +159,7 @@ namespace Final_Project.Shape
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Custom;
             pen.DashPattern = new float[] { 1, 3 };
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
             Text();

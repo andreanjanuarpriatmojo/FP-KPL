@@ -31,11 +31,11 @@ namespace Final_Project
             #endregion
 
             #region Tool
-            //this.toolbox.AddTool(new LineTool());
             this.toolbox.AddTool(new SelectTool());
-            this.toolbox.AddTool(new TextTool());
+            this.toolbox.AddSeparator();
             this.toolbox.AddTool(new ActorTool());
             this.toolbox.AddTool(new UseCaseTool());
+            this.toolbox.AddSeparator();
             this.toolbox.AddTool(new AssociationTool());
             this.toolbox.AddTool(new ConnectorTool());
             this.toolbox.AddTool(new ConnectorDotDotTool());

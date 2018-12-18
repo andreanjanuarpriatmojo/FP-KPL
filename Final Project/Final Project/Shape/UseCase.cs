@@ -63,10 +63,8 @@ namespace Final_Project.Shape
 
         private void DrawLogic()
         {
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawEllipse(this.pen, cirX, cirY, cirWidth, cirHeight);
-
-            //this.graphics.DrawString(Value, font, brush, (int)(cirX + (cirWidth * 0.42)) , (int)(cirY + (cirHeight * 0.42)));
-            //size = this.graphics.MeasureString(Value, font);
         }
 
         private void DrawText()
@@ -75,6 +73,7 @@ namespace Final_Project.Shape
             float x = (cirWidth / 2) - (size.Width / 2) + this.cirX;
             float y = (cirHeight / 2) - (size.Height / 2) + this.cirY;
             PointF point = new PointF(x, y);
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawString(Value, font, brush, point);
         }
 

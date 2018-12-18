@@ -43,8 +43,8 @@ namespace Final_Project.Tool
         public AssociationTool()
         {
             this.Name = "Association Tool";
-            this.ToolTipText = "Connector Tool";
-            this.Image = IconSet.connector;
+            this.ToolTipText = "Association Tool";
+            this.Image = IconSet.association;
             this.CheckOnClick = true;
         }
 

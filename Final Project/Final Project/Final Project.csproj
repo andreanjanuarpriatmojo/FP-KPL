@@ -81,8 +81,6 @@
     <Compile Include="Shape\Include.cs" />
     <Compile Include="Shape\UseCase.cs" />
     <Compile Include="Shape\Connector.cs" />
-    <Compile Include="Shape\Line.cs" />
-    <Compile Include="Shape\Text.cs" />
     <Compile Include="State\EditState.cs" />
     <Compile Include="State\PreviewState.cs" />
     <Compile Include="State\StaticState.cs" />
@@ -113,13 +111,7 @@
     <Compile Include="Tool\IncludeTool.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tool\LineTool.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Tool\SelectTool.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tool\TextTool.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tool\UseCaseTool.cs">
@@ -178,6 +170,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-advance-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\association.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dependency.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directed association.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\extend.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generalization.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\include.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usecase.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E, Character, Alphabet, Letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I, Character, Alphabet, Letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-advance-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrow-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-horizontal-line-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-oval-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-standing-man-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

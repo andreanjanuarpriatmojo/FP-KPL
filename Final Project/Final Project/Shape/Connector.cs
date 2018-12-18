@@ -105,6 +105,7 @@ namespace Final_Project.Shape
             arrowPoints[1] = pointLeft;
             arrowPoints[2] = pointRight;
 
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             this.graphics.DrawLine(pen, pointLeft, point);
             this.graphics.DrawLine(pen, pointRight, point);

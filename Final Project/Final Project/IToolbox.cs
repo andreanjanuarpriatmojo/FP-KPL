@@ -12,6 +12,7 @@ namespace Final_Project
     {
         event ToolSelectedEventHandler ToolSelected;
         void AddTool (ITool tool);
+        void AddSeparator();
         void RemoveTool (ITool tool);
         ITool ActiveTool { get; }
     }

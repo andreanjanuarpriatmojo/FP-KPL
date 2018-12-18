@@ -45,6 +45,7 @@ namespace Final_Project.Shape
             Point joint = new Point((finishPoint.X + startPoint.X) / 2, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.7));
             Point joint2 = new Point((finishPoint.X + startPoint.X) / 2, (int)(startPoint.Y + (finishPoint.Y - startPoint.Y) * 0.3));
 
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawEllipse(pen, startPoint.X + (finishPoint.X - startPoint.X) / 4 , startPoint.Y, (finishPoint.X - startPoint.X) / 2, (int)((finishPoint.Y - startPoint.Y) * 0.25));
             this.graphics.DrawLine(pen, joint, this.finishPoint);
             this.graphics.DrawLine(pen, new Point(startPoint.X, finishPoint.Y), joint);
@@ -60,6 +61,7 @@ namespace Final_Project.Shape
             float x = (finishPoint.X + startPoint.X) / 2 - (size.Width / 2);
             float y = finishPoint.Y + 10;
             PointF point = new PointF(x, y);
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawString(Value, font, brush, point);
         }
 

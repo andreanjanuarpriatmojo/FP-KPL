@@ -42,9 +42,9 @@ namespace Final_Project.Tool
 
         public ConnectorTool()
         {
-            this.Name = "Connector Tool";
-            this.ToolTipText = "Connector Tool";
-            this.Image = IconSet.connector;
+            this.Name = "Directed Association Tool";
+            this.ToolTipText = "Directed Association Tool";
+            this.Image = IconSet.directed_association;
             this.CheckOnClick = true;
         }
 

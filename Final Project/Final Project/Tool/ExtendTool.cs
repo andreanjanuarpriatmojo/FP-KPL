@@ -42,9 +42,9 @@ namespace Final_Project.Tool
 
         public ExtendTool()
         {
-            this.Name = "Association Tool";
-            this.ToolTipText = "Connector Tool";
-            this.Image = IconSet.connector;
+            this.Name = "Extend Tool";
+            this.ToolTipText = "Extend Tool";
+            this.Image = IconSet.extend;
             this.CheckOnClick = true;
         }
 

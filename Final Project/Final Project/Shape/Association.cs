@@ -31,6 +31,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Solid;
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             
         }
@@ -39,6 +40,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Black;
             pen.DashStyle = DashStyle.Solid;
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
         }
 
@@ -46,6 +48,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.DashDotDot;
+            this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
         }
 

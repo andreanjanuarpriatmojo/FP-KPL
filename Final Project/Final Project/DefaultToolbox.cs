@@ -34,6 +34,11 @@ namespace Final_Project
             }
         }
 
+        public void AddSeparator()
+        {
+            this.Items.Add(new ToolStripSeparator());
+        }
+
         public void RemoveTool(ITool tool)
         {
             foreach (ToolStripItem toolStripItem in this.Items)

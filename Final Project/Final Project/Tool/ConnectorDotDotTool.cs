@@ -42,9 +42,9 @@ namespace Final_Project.Tool
 
         public ConnectorDotDotTool()
         {
-            this.Name = "Connector Dot Dot Tool";
-            this.ToolTipText = "Connector Dot Dot Tool";
-            this.Image = IconSet.dotdot;
+            this.Name = "Dependency Tool";
+            this.ToolTipText = "Dependency Tool";
+            this.Image = IconSet.dependency;
             this.CheckOnClick = true;
         }
 

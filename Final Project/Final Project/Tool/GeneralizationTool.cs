@@ -42,9 +42,9 @@ namespace Final_Project.Tool
 
         public GeneralizationTool()
         {
-            this.Name = "Connector Tool";
-            this.ToolTipText = "Connector Tool";
-            this.Image = IconSet.connector;
+            this.Name = "Generalization Tool";
+            this.ToolTipText = "Generalization Tool";
+            this.Image = IconSet.generalization;
             this.CheckOnClick = true;
         }
 
