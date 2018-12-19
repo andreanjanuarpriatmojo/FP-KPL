@@ -136,7 +136,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
+            pen.DashPattern = new float[] { 5, 5 };
             this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
@@ -147,7 +147,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Black;
             pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
+            pen.DashPattern = new float[] { 5, 5 };
             this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
@@ -158,7 +158,7 @@ namespace Final_Project.Shape
         {
             pen.Color = Color.Blue;
             pen.DashStyle = DashStyle.Custom;
-            pen.DashPattern = new float[] { 1, 3 };
+            pen.DashPattern = new float[] { 5, 5 };
             this.graphics.SmoothingMode = SmoothingMode.AntiAlias;
             this.graphics.DrawLine(pen, this.startPoint, this.finishPoint);
             arrow();
